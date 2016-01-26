@@ -16,5 +16,8 @@ describe('Contact', function() {
     expect(testAddress.state).to.equal("Oregon");
     expect(testAddress.zipCode).to.equal("97210");
   });
-  
+  it("add the fullAddress method to all addresses", function() {
+    var testAddress = new Address("123 madison st", "Portland", "Oregon", "97210");
+    expect(testAddress.fullAddress()).to.equal("123 madison st, Portland, Oregon 97210");
+  });
 });
