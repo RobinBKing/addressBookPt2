@@ -63,6 +63,7 @@ $(document).ready(function() {
         $("#showContact h2").text(newContact.fullName());
         $(".first-name").text(newContact.firstName);
         $(".last-name").text(newContact.lastName);
+        $("ul#addresses").empty();
         newContact.addresses.forEach(function(address) {
            $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
         });
@@ -74,6 +75,6 @@ $(document).ready(function() {
     $("input#newCity").val("");
     $("input#newState").val("");
     $("input#newZip").val("");
-    $("addresses").empty();
+
   });
 });
