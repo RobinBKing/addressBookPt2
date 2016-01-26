@@ -9,4 +9,11 @@ describe('Contact', function() {
     var testContact = new Contact("Jesse", "James");
     expect(testContact.fullName()).to.equal("Jesse James");
   });
+  it("creates a new address with given properties.", function() {
+    var testAddress = new Address("123 madison st", "Portland", "Oregon", "97210");
+    expect(testAddress.street).to.equal("123 madison st");
+    expect(testAddress.city).to.equal("Portland");
+    expect(testAddress.state).to.equal("Oregon");
+    expect(testAddress.zipCode).to.equal("97210");
+  });
 });
