@@ -40,6 +40,15 @@ $(document).ready(function() {
                                '</div>');
   });
 
+  function resetFields(){
+    $("input#newFirstname").val("");
+    $("input#newLastname").val("");
+    $("input#newStreet").val("");
+    $("input#newCity").val("");
+    $("input#newState").val("");
+    $("input#newZip").val("");
+  };
+
   $("form#newContact").submit(function(event) {
     event.preventDefault();
 
@@ -59,7 +68,7 @@ $(document).ready(function() {
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
       $(".contact").last().click(function() {
-        $("#showContact").show();
+        $("#showContact").toggle();
         $("#showContact h2").text(newContact.fullName());
         $(".first-name").text(newContact.firstName);
         $(".last-name").text(newContact.lastName);
@@ -68,13 +77,6 @@ $(document).ready(function() {
            $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
         });
      });
-
-    $("input#newFirstname").val("");
-    $("input#newLastname").val("");
-    $("input#newStreet").val("");
-    $("input#newCity").val("");
-    $("input#newState").val("");
-    $("input#newZip").val("");
-
+     resetFields();
   });
 });
