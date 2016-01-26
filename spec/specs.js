@@ -16,4 +16,5 @@ describe('Contact', function() {
     expect(testAddress.state).to.equal("Oregon");
     expect(testAddress.zipCode).to.equal("97210");
   });
+  
 });
